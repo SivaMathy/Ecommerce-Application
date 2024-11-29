@@ -1,0 +1,15 @@
+.store-wrapper{
+    margin-inline:auto;
+    margin-top: 50px;
+}
+
+.products-wrpper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 70px auto 0px;
+    row-gap: 30px;
+    column-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
