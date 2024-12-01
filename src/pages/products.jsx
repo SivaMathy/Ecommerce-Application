@@ -1,22 +1,26 @@
-import React, {Component} from "react";
+import React, { useContext } from "react";
 import Item from "../components/item";
 import Search from "../components/search";
 import "./products.css";
-import ProductData from '../data/product'
-export default class Products extends Component {
-  render() {
-    return (
-      <div className="store-wrapper">
-        <Search />
-        <div className="products-wrpper">
-          {
-            ProductData.map((item)=>(
-              <Item />
-            ))
-          }
+import { ProductContext } from "../context/ProductContxt";
 
-        </div>
+const Products = () => {
+  const {products,filterProducts} = useContext(ProductContext);
+  return (
+    <div className="store-wrapper">
+      <Search />
+      <div className="products-wrapper">
+        {products.map((item, index) => (
+          <Item
+            key={index}
+            name={item.name}
+            image={item.image}
+            price={item.price}  
+          />
+        ))}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default Products;

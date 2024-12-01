@@ -1,0 +1,60 @@
+.login-wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    @media screen and (min-width: 768px) {
+    }
+    @media screen and (min-width: 992px) {
+    }
+  }
+  .form-wrappper {
+    width: 100%;
+    margin: auto 20px;
+    @media screen and (min-width: 768px) {
+      width: 300px;
+      margin: auto ;
+      }
+      @media screen and (min-width: 992px) {
+        width: 340px;
+        margin: auto ;
+      }
+  }
+  .title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+  }
+  .form-group{
+    width: 100%;
+    border: 1px solid #DADEE7;
+    padding-block: 15px;
+    margin-top: 15px;
+}
+  .btn{
+    height: 46px;
+    width: 100%;
+    background-color: transparent;
+    border:none;
+    font-size: 14px;
+    font-weight: 300;
+}
+  .submit{
+    margin-block-start: 36px;
+    background-color: #007AFF;
+    color: #ffffff;
+}
+  .google{
+    margin-block-start: 20px;
+    border: 1px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+        padding-inline: 10px;
+    }
+}
+  a{
+    color: #000000;
+}
