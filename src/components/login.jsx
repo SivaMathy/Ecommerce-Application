@@ -1,23 +1,24 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import "./login.css";
-import {UserContext} from "../context/UserContxt";
-export default function login() {
-  const {LoginContext} = useContext(UserContext);
+import { UserContext } from "../context/UserContxt";
+
+export default function Login() {
+  const { LoginContext } = useContext(UserContext);
   const [loginCredetials, setLoginCredentials] = useState({
     email: "",
     password: "",
   });
 
-
   const handleLoginInput = (e) => {
-    const {name, value} = e.target;
-    setLoginCredentials({...loginCredetials,[name]: value});
+    const { name, value } = e.target;
+    setLoginCredentials({ ...loginCredetials, [name]: value });
   };
 
-  const loginFunction = (e) =>{
+  const loginFunction = (e) => {
     e.preventDefault();
-    LoginContext(loginCredetials)
-  }
+    LoginContext(loginCredetials);
+  };
+
   return (
     <div>
       <div className="form-wrappper">
@@ -41,8 +42,9 @@ export default function login() {
             placeholder="Password"
             onChange={handleLoginInput}
           />
-
-          <button className="btn submit" onClick={loginFunction}>LogIn</button>
+          <button className="btn submit" onClick={loginFunction}>
+            LogIn
+          </button>
         </form>
         <div className="login-wrapper">
           <h4>

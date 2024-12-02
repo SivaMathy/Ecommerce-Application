@@ -5,17 +5,17 @@ import MinusIcon from '../assets/minus.png';
 import DeleteIcon from '../assets/delete.png';
 
 import './cartitems.css'
-  const Cartitems = () => {
+  const Cartitems = ({id,name,image,price}) => {
     return (
       <div className="cartitems-wrapper">
         <table>
           <tbody>
           <tr>
             <td className="image-item">
-                <img src={ItemImg} className="img" alt="image item"/>
+                <img src={image} className="img" alt="image item"/>
             </td>
-            <td className="item-title">Maria Anders</td>
-            <td className="item-quantity">Germany</td>
+            <td className="item-title">{name}</td>
+            <td className="item-quantity">{price}</td>
             <td className="action-btns">
                 <img src={PlusIcon} alt="plus icon" className="img plus-icons"/>
                 <h3 className="quantity">05</h3>

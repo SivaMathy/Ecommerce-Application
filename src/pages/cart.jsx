@@ -6,18 +6,21 @@ import {ProductContext} from "../context/ProductContxt";
 const Cart = () => {
   const {GetCartItem} = useContext(ProductContext);
   const handleGetCartItem = () => {
-    GetCartItem();
-  };
-  handleGetCartItem();
-
+    const items = GetCartItem();     
+    return items; 
+};
+const cartItems = handleGetCartItem();
+console.log(cartItems)
   return (
     <div className="cart-wrapper">
       <h3 className="cart-title">Your Bag</h3>
       <div className="container">
         <div className="left-wrapper">
-          <Cartitems />
-          <Cartitems />
-          <Cartitems />
+        {cartItems.map((item, index) => (
+            <div key={index}>
+              <Cartitems name={item.name} price={item.price} image={item.image}/>
+            </div>
+          ))}
         </div>
         <div className="right-wrapper">
           <Checkout />
