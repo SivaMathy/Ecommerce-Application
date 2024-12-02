@@ -1,4 +1,5 @@
 import React from "react";
+import './login.css'
 
 export default function login() {
   return (
@@ -15,7 +16,7 @@ export default function login() {
         </form>
         <div className="login-wrapper">
           <h4>
-            Don't You Have A Account? <a href="/login">Log In</a>
+            Don't You Have A Account? <a href="/">Sign In</a>
           </h4>
         </div>
       </div>

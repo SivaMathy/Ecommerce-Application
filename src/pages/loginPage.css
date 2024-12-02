@@ -1,0 +1,19 @@
+.page-wrapper{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+.img-wrapper{
+    width: 50%;
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: block;
+      }
+      @media screen and (min-width: 992px) {
+        display: block;
+      }
+}
+.form-wrapper{
+    width: 100%;
+
+}
