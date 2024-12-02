@@ -4,9 +4,10 @@ import "./App.css";
 import Products from "./pages/products";
 import Cart from "./pages/cart";
 import LoginPage from "./pages/loginPage";
-import SigninPage from "./pages/signinPage";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { ProductProvider } from "./context/ProductContxt"; 
+import SignupPage from "./pages/signupPage";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {ProductProvider} from "./context/ProductContxt";
+import {UserProvider} from "./context/UserContxt";
 
 function App() {
   return (
@@ -21,9 +22,31 @@ function App() {
               </ProductProvider>
             }
           />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/" element={<SigninPage />} />
+          <Route
+            path="/cart"
+            element={
+              <ProductProvider>
+                <Cart />
+              </ProductProvider>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <UserProvider>
+                <LoginPage />
+              </UserProvider>
+            }
+          />
+
+          <Route
+            path="/"
+            element={
+              <UserProvider>
+                <SignupPage />
+              </UserProvider>
+            }
+          />
         </Routes>
       </Router>
     </div>

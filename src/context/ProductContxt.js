@@ -17,9 +17,31 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
+  const AddToCart = (id, userId) => {
+    const product = products.find((p) => p.id === id);
+  
+    if (product) {
+      const cartItem = {
+        ...product,
+        userId: localStorage.getItem("userId"),
+      };
 
+      const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+      const updatedCart = [...existingCart, cartItem];
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+  
+      console.log("Item added to cart:", cartItem);
+    } else {
+      console.error("Product not found for ID:", id);
+    }
+  };
+
+  const GetCartItem = () =>{
+    console.log("test")
+  }
+  
   return (
-    <ProductContext.Provider value={{products,filterProducts}}>
+    <ProductContext.Provider value={{products,filterProducts,AddToCart,GetCartItem}}>
       {children}
     </ProductContext.Provider>
   );

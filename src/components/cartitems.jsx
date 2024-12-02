@@ -1,14 +1,15 @@
-import React, {Component} from "react";
+import React, {Component, useContext} from "react";
 import ItemImg from '../assets/1.png';
 import PlusIcon from '../assets/plus.png';
 import MinusIcon from '../assets/minus.png';
-import DeleteIcon from '../assets/delete.png'
+import DeleteIcon from '../assets/delete.png';
+
 import './cartitems.css'
-export default class Cartitems extends Component {
-  render() {
+  const Cartitems = () => {
     return (
       <div className="cartitems-wrapper">
         <table>
+          <tbody>
           <tr>
             <td className="image-item">
                 <img src={ItemImg} className="img" alt="image item"/>
@@ -24,8 +25,9 @@ export default class Cartitems extends Component {
             <img src={DeleteIcon} alt="minus icon" className="img delete-icons"/>
             </td>
           </tr>
+          </tbody>
         </table>
       </div>
     );
-  }
 }
+export default Cartitems;

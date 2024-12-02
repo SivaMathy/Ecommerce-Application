@@ -4,18 +4,30 @@ import Search from "../components/search";
 import "./products.css";
 import { ProductContext } from "../context/ProductContxt";
 
+
 const Products = () => {
-  const {products,filterProducts} = useContext(ProductContext);
+  const {products,filterProducts,AddToCart} = useContext(ProductContext);
+
+ const handleAddToCart = (id) =>{
+    AddToCart(id)
+  }
+
+const rediretToCart = () =>{
+  window.location.href = "/cart";
+}
   return (
     <div className="store-wrapper">
       <Search />
+      <button className="addTocart" onClick={rediretToCart}>Cart</button>
       <div className="products-wrapper">
         {products.map((item, index) => (
           <Item
+          id={item.id}
             key={index}
             name={item.name}
             image={item.image}
-            price={item.price}  
+            price={item.price} 
+            addToCart={handleAddToCart} 
           />
         ))}
       </div>
