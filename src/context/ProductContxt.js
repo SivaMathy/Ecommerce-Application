@@ -72,14 +72,13 @@ export const ProductProvider = ({children}) => {
   
   const DecreaseItemCount = (id) => {
     const currentUser = localStorage.getItem("userId");
-  
     const updatedCart = cart
       .map((item) =>
         item.id === id && item.userId === currentUser && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 } 
+          ? { ...item, quantity: item.quantity - 1 }
           : item
       )
-      .filter((item) => !(item.id === id && item.userId === currentUser && item.quantity === 1)); 
+      .filter((item) => !(item.id === id && item.userId === currentUser && item.quantity === 0)); 
     updateCartInLocalStorage(updatedCart);
   };
   

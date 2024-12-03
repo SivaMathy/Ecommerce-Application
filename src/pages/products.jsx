@@ -1,33 +1,36 @@
-import React, { useContext } from "react";
+import React, {useContext} from "react";
 import Item from "../components/item";
 import Search from "../components/search";
 import "./products.css";
-import { ProductContext } from "../context/ProductContxt";
-
+import {ProductContext} from "../context/ProductContxt";
 
 const Products = () => {
-  const {products,filterProducts,AddToCart} = useContext(ProductContext);
+  const {products, filterProducts, AddToCart} = useContext(ProductContext);
 
- const handleAddToCart = (id) =>{
-    AddToCart(id)
-  }
+  const handleAddToCart = (id) => {
+    AddToCart(id);
+  };
 
-const rediretToCart = () =>{
-  window.location.href = "/cart";
-}
+  const rediretToCart = () => {
+    window.location.href = "/cart";
+  };
   return (
     <div className="store-wrapper">
       <Search />
-      <button className="addTocart" onClick={rediretToCart}>Cart</button>
+      <div className="view-cart">
+        <button className="addTocart" onClick={rediretToCart}>
+          View Cart
+        </button>
+      </div>
       <div className="products-wrapper">
         {products.map((item, index) => (
           <Item
-          id={item.id}
+            id={item.id}
             key={index}
             name={item.name}
             image={item.image}
-            price={item.price} 
-            addToCart={handleAddToCart} 
+            price={item.price}
+            addToCart={handleAddToCart}
           />
         ))}
       </div>

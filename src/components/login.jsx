@@ -20,7 +20,7 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div style={{ display: "flex" }}>
       <div className="form-wrappper">
         <div className="form-header">
           <h3 className="title">Login To The Account</h3>
