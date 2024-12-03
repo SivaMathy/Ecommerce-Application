@@ -21,7 +21,6 @@ export default function Signin() {
     e.preventDefault();
 
     if (formData.password !== formData.cpassword) {
-      console.log("Passwords do not match");
       return;
     }
 

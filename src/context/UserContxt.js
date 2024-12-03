@@ -8,7 +8,6 @@ export const UserProvider = ({children}) => {
   const SignIn = (userInfo) => {
     setUser((prev) => {
       const updatedUserInfo = [...prev, userInfo];
-      console.log("Updated User Info:", updatedUserInfo);
       return updatedUserInfo;
     });
   };
